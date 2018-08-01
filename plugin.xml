@@ -1,0 +1,33 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       id="cordova-plugin-hybrid"
+       version="1.0.0">      
+   <name>LocationPlugin</name>
+
+   <description>
+       Simple location service example
+   </description>
+
+   <author>Arushi Jain</author>
+
+   <license>None</license>      
+   <keywords>Agent Location</keywords>
+
+   <engines>
+       <engine name="cordova" version=">=3.0.0"/>
+   </engines>
+
+   <js-module src="www/js/location.js" name="location">
+       <clobbers target="location" />
+   </js-module>
+
+   <!-- android -->
+   <platform name="android">
+       <config-file target="config.xml" parent="/*">
+           <feature name="AgentLocation">
+               <param name="android-package" value="org.sample.location" />
+           </feature>
+       </config-file>
+       <source-file src="src/android/agentLocation.java" target-dir="src/android"/>
+   </platform>      
+  </plugin> 
